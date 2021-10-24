@@ -1,41 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello</title>
-</head>
-<body>
-    {% comment %} <p>HI, this is from the Django Girls Tutorial</p> {% endcomment %}
-        <header>
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </header>
+<header class="page-header">
+    <div class="container">
+        <h1>
+            <a href="/">Django Girls Blog</a>
+        </h1>            
+    </div>
+</header>
 
-
-        {% for post in posts %}
-            <article>
-                <time>published: {{ post.published_date }}</time>
-                <h2><a href="">{{ post.title }}</a></h2>
-                <p>{{ post.text }}</p>
-            </article>
-        {% endfor %}        
-
-        {% comment %} 
-
-        <article>
-            <time>published: 14.06.2014, 12:14</time>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </article>     {% endcomment %}
-</body>
-</html>
-
-{% comment %} <!DOCTYPE html>
-<html>
-    <head>
-        <title>Django Girls blog</title>
-    </head>
-    <body>
-    </body>
-</html> {% endcomment %}
+<main class="container">
+    <div class="row">
+        <div class="col">
+            {% for post in posts %}
+                <article class="post">
+                    <time class="date">
+                        {{ post.published_date }}
+                    </time>
+                    <h2><a href="">{{ post.title }}</a></h2>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</main>
