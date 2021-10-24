@@ -12,3 +12,6 @@ pa_autoconfigure_django.py --python=3.8 https://github.com/ahuimanu/django_girls
 ### Markdown Cheatsheet
 
 [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+Post.objects.create(author=me, title='Other title', text='Other text')
+Post.objects.create(author=me, title='Great title', text='Great text')
